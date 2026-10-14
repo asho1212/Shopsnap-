@@ -232,6 +232,9 @@ function updateGuide(){
 }
 function capturePhoto(){
   if(state.currentAngle>=4||state.isProcessing)return;
+  if(!video.videoWidth || !video.videoHeight){
+    showToast('कैमरा तैयार नहीं है! गैलरी बटन दबाएँ');return;
+  }
   const s=Math.min(video.videoWidth||640,video.videoHeight||640);
   const c=document.createElement('canvas');c.width=c.height=s;
   c.getContext('2d').drawImage(video,(video.videoWidth-s)/2,(video.videoHeight-s)/2,s,s,0,0,s,s);
@@ -388,8 +391,4 @@ btnInstall.onclick=async()=>{
   state.deferredPrompt=null;
 };
 window.addEventListener('appinstalled',()=>{
-  installBanner.classList.add('hidden');showToast('✓ होम स्क्रीन पर देखें!');
-});
-if(window.matchMedia('(display-mode: standalone)').matches)installBanner.classList.add('hidden');
-
-/
+  installBanner.classList.add('hidden');showToast('✓ होम स्क्रीन पर द
