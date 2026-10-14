@@ -1,0 +1,21 @@
+{
+  "name": "ShopSnap Pro - दुकान फोटो टूल",
+  "short_name": "ShopSnap",
+  "description": "छोटे दुकानदारों के लिए 4 एंगल प्रोडक्ट फोटो टूल",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f1f5f9",
+  "theme_color": "#2563eb",
+  "lang": "hi",
+  "dir": "ltr",
+  "scope": "./",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
